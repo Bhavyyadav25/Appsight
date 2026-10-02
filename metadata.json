@@ -1,8 +1,14 @@
 {
   "uuid": "appsight@bhavyyadav25.github.io",
   "name": "Appsight",
-  "description": "See every running app in the top bar, grouped the way you think about them: one entry per app, however many processes it spawns. Hover to list them, click one for live CPU, memory, cache, disk I/O, network traffic, storage and open files, and end the whole app (all its processes) in one click.",
-  "shell-version": ["45", "46", "47", "48", "49"],
+  "description": "See every running app at a glance: one entry per app, however many processes it spawns.\n\n• Live CPU or memory use with a small graph in the top bar, turning orange when usage is high\n• Hover the icon to list your apps with CPU and memory, search by name or PID, and filter apps, services and commands\n• Click an app for live CPU, memory, cache, disk I/O, network traffic, disk space and open files\n• End a whole app (all its processes) in one click, with a confirmation and a force kill\n• Light and dark style, a keyboard shortcut, hidden apps, units (per-core CPU, KiB, Mbit/s) and many layout options\n• Light on old computers: almost nothing runs while the menu is closed, and it refreshes less often when the computer is slow\n\nCore parts of your desktop session (GNOME Shell, systemd, D-Bus) can't be ended by accident, and other users' processes are view-only.",
+  "shell-version": [
+    "45",
+    "46",
+    "47",
+    "48",
+    "49"
+  ],
   "settings-schema": "org.gnome.shell.extensions.appsight",
   "gettext-domain": "appsight",
   "version-name": "1.0",
