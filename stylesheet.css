@@ -1,0 +1,256 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later */
+/*
+ * Dark style, also the fallback. stylesheet-light.css is built from this file
+ * plus theme/light.css (see the Makefile), so only colors differ between them.
+ *
+ * Data colors come from the GNOME palette, one per resource so they never
+ * depend on the accent color: CPU blue, memory purple, swap orange, network
+ * green/teal and disk yellow/orange. Controls (chips, sort, focus) follow the
+ * accent color on GNOME 47+.
+ */
+
+/* ---- top bar ---------------------------------------------------------- */
+
+.as-panel-label { padding-left: 4px; font-feature-settings: "tnum"; font-weight: 600; }
+.as-panel-alert { color: #ffa348; font-weight: 800; }
+.as-panel-graph {
+  width: 26px; height: 14px; margin-left: 5px;
+  color: -st-accent-color;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ---- menu shell ------------------------------------------------------- */
+
+.as-menu { width: 500px; padding: 10px 0 6px 0; }
+.as-list-view, .as-detail-view { spacing: 10px; }
+
+/* ---- system cards ----------------------------------------------------- */
+
+.as-stats { spacing: 8px; padding: 0 12px; }
+.as-stat {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 14px; padding: 10px 12px 9px 12px; spacing: 3px;
+}
+.as-stat-head { spacing: 6px; }
+.as-stat-icon { icon-size: 13px; }
+.as-stat-title { font-size: 0.78em; font-weight: bold; }
+.as-stat-cpu .as-stat-icon, .as-stat-cpu .as-stat-title { color: #62a0ea; }
+.as-stat-mem .as-stat-icon, .as-stat-mem .as-stat-title { color: #c061cb; }
+.as-stat-load .as-stat-icon, .as-stat-load .as-stat-title { color: #5ec8d8; }
+.as-stat-value { font-size: 1.45em; font-weight: 800; font-feature-settings: "tnum"; }
+.as-stat-sub { font-size: 0.74em; color: rgba(255, 255, 255, 0.55); font-feature-settings: "tnum"; }
+.as-stat-bars { spacing: 5px; min-height: 26px; }
+.as-stat .as-spark { height: 26px; }
+
+/* ---- usage bars & graphs ---------------------------------------------- */
+
+.as-bar { height: 4px; border-radius: 2px; background-color: rgba(255, 255, 255, 0.08); }
+.as-bar-fill { border-radius: 2px; background-color: #62a0ea; }
+.as-stat-bar { height: 7px; border-radius: 4px; }
+.as-stat-bar .as-bar-fill { border-radius: 4px; }
+.as-bar-mem .as-bar-fill, .as-col-mem .as-bar-fill { background-color: #c061cb; }
+.as-bar-swap { height: 4px; border-radius: 2px; }
+.as-bar-swap .as-bar-fill { background-color: #ffa348; border-radius: 2px; }
+.as-bar-load .as-bar-fill { background-color: #5ec8d8; }
+
+.as-spark { color: #62a0ea; }
+.as-spark-cpu { color: #62a0ea; }
+.as-spark-mem { color: #c061cb; }
+.as-spark-net { color: #33d17a; -as-secondary-color: #5ec8d8; }
+.as-spark-disk { color: #f8e45c; -as-secondary-color: #ffa348; }
+
+/* ---- search & chips --------------------------------------------------- */
+
+.as-search { margin: 0 12px; border-radius: 12px; padding: 7px 10px; }
+.as-search-icon { icon-size: 14px; }
+
+.as-chips { spacing: 6px; padding: 0 12px; }
+.as-chip {
+  border-radius: 99px; padding: 4px 12px;
+  background-color: rgba(255, 255, 255, 0.07);
+  font-size: 0.85em;
+  transition-duration: 120ms;
+}
+.as-chip:hover, .as-chip:focus { background-color: rgba(255, 255, 255, 0.14); }
+.as-chip:checked {
+  background-color: -st-accent-color;
+  color: -st-accent-fg-color;
+}
+.as-chip-box { spacing: 6px; }
+.as-chip-label { font-weight: 600; }
+.as-chip-count { font-feature-settings: "tnum"; color: rgba(255, 255, 255, 0.5); }
+.as-chip:checked .as-chip-count { color: -st-accent-fg-color; }
+
+/* ---- column headers --------------------------------------------------- */
+
+.as-columns { padding: 0 14px; }
+.as-column-button {
+  font-size: 0.74em; font-weight: bold; color: rgba(255, 255, 255, 0.5);
+  padding: 2px 4px; border-radius: 6px;
+  transition-duration: 120ms;
+}
+.as-column-button:hover { background-color: rgba(255, 255, 255, 0.08); color: rgba(255, 255, 255, 0.8); }
+.as-column-button:checked { color: -st-accent-color; }
+.as-column-box { spacing: 2px; }
+.as-column-arrow { icon-size: 10px; }
+.as-columns .as-col-name { padding-left: 46px; }
+.as-columns .as-col-cpu .as-column-box,
+.as-columns .as-col-mem .as-column-box { min-width: 0; }
+
+/* ---- rows ------------------------------------------------------------- */
+
+.as-scroll { max-height: 440px; }
+.as-list-scroll { padding: 0 6px; }
+.as-row { spacing: 12px; padding: 6px 8px; margin: 0; border-radius: 12px; transition-duration: 100ms; }
+.as-row-text { spacing: 1px; }
+.as-row-name { font-weight: 600; }
+.as-row-sub { font-size: 0.76em; color: rgba(255, 255, 255, 0.5); }
+
+/* Icon tiles: real app icons sit bare, everything else gets a tinted tile. */
+.as-tile { width: 32px; height: 32px; border-radius: 10px; }
+.as-tile-service { background-color: rgba(98, 160, 234, 0.16); color: #99c1f1; }
+.as-tile-system { background-color: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.75); }
+.as-tile-command { background-color: rgba(51, 209, 122, 0.15); color: #8ff0a4; }
+.as-tile-app { background-color: transparent; }
+.as-detail-tile { width: 48px; height: 48px; border-radius: 14px; }
+
+.as-metric { spacing: 4px; }
+.as-metric-value { font-feature-settings: "tnum"; text-align: right; font-size: 0.92em; font-weight: 600; }
+.as-col { font-feature-settings: "tnum"; text-align: right; }
+.as-col-cpu { min-width: 52px; }
+.as-col-mem { min-width: 72px; }
+.as-col-action { min-width: 28px; }
+.as-hot { color: #ffa348; font-weight: 800; }
+.as-row-lock { icon-size: 14px; color: rgba(255, 255, 255, 0.4); }
+
+.as-empty { padding: 32px 16px; spacing: 10px; }
+.as-empty-icon { icon-size: 36px; color: rgba(255, 255, 255, 0.3); }
+.as-empty-label { color: rgba(255, 255, 255, 0.55); }
+
+/* ---- footer ----------------------------------------------------------- */
+
+.as-footer {
+  spacing: 4px; padding: 8px 12px 2px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+.as-summary { font-size: 0.78em; color: rgba(255, 255, 255, 0.5); font-feature-settings: "tnum"; }
+.as-footer-button { border-radius: 99px; padding: 7px; transition-duration: 120ms; }
+.as-footer-button:hover, .as-footer-button:focus { background-color: rgba(255, 255, 255, 0.12); }
+.as-footer-icon { icon-size: 16px; }
+
+/* ---- buttons ---------------------------------------------------------- */
+
+.as-button {
+  border-radius: 99px; padding: 7px 14px;
+  background-color: rgba(255, 255, 255, 0.08);
+  transition-duration: 120ms;
+}
+.as-button:hover, .as-button:focus { background-color: rgba(255, 255, 255, 0.16); }
+.as-button-box { spacing: 7px; }
+.as-button-icon { icon-size: 14px; }
+.as-row-kill { padding: 5px; border-radius: 99px; background-color: transparent; }
+.as-row-kill:hover, .as-row-kill:focus { background-color: rgba(237, 51, 59, 0.22); color: #ff7b63; }
+.as-armed, .as-armed:hover, .as-row-kill.as-armed {
+  background-color: #e01b24; color: #ffffff; font-weight: bold;
+}
+
+/* ---- details: header & actions ---------------------------------------- */
+
+.as-detail-header { spacing: 12px; padding: 0 12px; }
+.as-back {
+  border-radius: 99px; padding: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  transition-duration: 120ms;
+}
+.as-back:hover, .as-back:focus { background-color: rgba(255, 255, 255, 0.16); }
+.as-back-icon { icon-size: 16px; }
+.as-detail-titles { spacing: 2px; }
+.as-detail-title { font-weight: 800; font-size: 1.25em; }
+.as-detail-subtitle { font-size: 0.78em; color: rgba(255, 255, 255, 0.55); }
+
+.as-badge {
+  font-size: 0.74em; font-weight: 800;
+  border-radius: 99px; padding: 4px 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.as-badge-low { color: #8ff0a4; background-color: rgba(51, 209, 122, 0.16); }
+.as-badge-medium { color: #f8e45c; background-color: rgba(229, 165, 10, 0.2); }
+.as-badge-high { color: #ff7b63; background-color: rgba(237, 51, 59, 0.2); }
+
+.as-actions { spacing: 8px; padding: 0 12px; }
+.as-action { padding: 8px 14px; font-weight: 700; }
+.as-action-end { color: #ff7b63; background-color: rgba(237, 51, 59, 0.14); }
+.as-action-end:hover, .as-action-end:focus { background-color: rgba(237, 51, 59, 0.24); }
+.as-action-force:hover, .as-action-force:focus { background-color: rgba(237, 51, 59, 0.2); color: #ff7b63; }
+.as-action.as-armed { color: #ffffff; background-color: #e01b24; }
+.as-protected {
+  spacing: 8px; padding: 9px 12px; border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+.as-protected-icon { icon-size: 14px; color: rgba(255, 255, 255, 0.55); }
+.as-protected-note { font-size: 0.84em; color: rgba(255, 255, 255, 0.6); }
+
+/* ---- details: graph cards --------------------------------------------- */
+
+.as-detail-scroll { max-height: 520px; }
+.as-detail-body { padding: 0 12px 8px 12px; spacing: 0; }
+.as-cards { spacing: 8px; padding-bottom: 8px; }
+.as-card {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 14px; padding: 10px 12px 8px 12px; spacing: 2px;
+}
+.as-card-head { spacing: 6px; }
+.as-card-icon { icon-size: 13px; }
+.as-card-title { font-size: 0.78em; font-weight: bold; }
+.as-card-value { font-size: 1.35em; font-weight: 800; font-feature-settings: "tnum"; }
+.as-card-sub { font-size: 0.72em; color: rgba(255, 255, 255, 0.5); font-feature-settings: "tnum"; }
+.as-card-spark { height: 40px; margin-top: 4px; }
+.as-card-cpu .as-card-title, .as-card-cpu .as-card-icon { color: #62a0ea; }
+.as-card-mem .as-card-title, .as-card-mem .as-card-icon { color: #c061cb; }
+.as-card-net .as-card-title, .as-card-net .as-card-icon { color: #33d17a; }
+.as-card-disk .as-card-title, .as-card-disk .as-card-icon { color: #f8e45c; }
+
+/* ---- details: sections ------------------------------------------------ */
+
+.as-section-header { border-radius: 8px; padding: 12px 4px 6px 4px; margin-top: 4px; }
+.as-section-header:hover .as-section-title, .as-section-header:focus .as-section-title { color: -st-accent-color; }
+.as-section-header:collapsed { padding-bottom: 4px; }
+.as-section-box { spacing: 8px; }
+.as-section-icon { icon-size: 14px; color: rgba(255, 255, 255, 0.55); }
+.as-section-title { font-size: 0.86em; font-weight: 800; }
+.as-section-chevron { icon-size: 12px; color: rgba(255, 255, 255, 0.45); }
+
+.as-group {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 14px; padding: 2px 0;
+}
+.as-kv-row {
+  spacing: 12px; padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.as-kv-row:last-child { border-bottom-width: 0; }
+.as-kv-key { font-size: 0.92em; }
+.as-kv-sub { font-size: 0.75em; color: rgba(255, 255, 255, 0.5); padding-top: 2px; max-width: 300px; }
+.as-kv-value {
+  text-align: right; font-feature-settings: "tnum"; max-width: 260px;
+  font-size: 0.92em; color: rgba(255, 255, 255, 0.6); font-weight: 600;
+}
+
+.as-proc-list { spacing: 0; }
+.as-proc-row { spacing: 8px; padding: 5px 8px 5px 12px; border-radius: 10px; }
+.as-proc-row:hover, .as-proc-row:focus { background-color: rgba(255, 255, 255, 0.07); }
+.as-proc-pid {
+  min-width: 52px; font-size: 0.75em; font-feature-settings: "tnum";
+  color: rgba(255, 255, 255, 0.45);
+}
+.as-proc-name { font-size: 0.88em; }
+.as-proc-row .as-col { font-size: 0.85em; }
+/* Same height whether or not the shared end button (5px padding + 14px icon) is in it. */
+.as-proc-row .as-col-action { min-height: 24px; }
+.as-proc-more { padding: 7px 12px; border-radius: 10px; }
+.as-proc-more:hover, .as-proc-more:focus { background-color: rgba(255, 255, 255, 0.07); }
+.as-proc-more-label { font-size: 0.8em; font-weight: 700; color: -st-accent-color; }

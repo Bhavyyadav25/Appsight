@@ -1,0 +1,10 @@
+{
+  "uuid": "appsight@bhavyyadav25.github.io",
+  "name": "Appsight",
+  "description": "See every running app in the top bar, grouped the way you think about them: one entry per app, however many processes it spawns. Hover to list them, click one for live CPU, memory, cache, disk I/O, network traffic, storage and open files, and end the whole app (all its processes) in one click.",
+  "shell-version": ["45", "46", "47", "48", "49"],
+  "settings-schema": "org.gnome.shell.extensions.appsight",
+  "gettext-domain": "appsight",
+  "version-name": "1.0",
+  "url": "https://github.com/Bhavyyadav25/Appsight"
+}

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="appsight">
+  <schema id="org.gnome.shell.extensions.appsight" path="/org/gnome/shell/extensions/appsight/">
+    <key name="refresh-interval" type="i">
+      <range min="1" max="10"/>
+      <default>2</default>
+      <summary>Refresh interval in seconds</summary>
+    </key>
+    <key name="open-on-hover" type="b">
+      <default>true</default>
+      <summary>Open the menu when the pointer rests on the panel button</summary>
+    </key>
+    <key name="hover-delay" type="i">
+      <range min="0" max="2000"/>
+      <default>300</default>
+      <summary>Hover delay in milliseconds</summary>
+    </key>
+    <key name="panel-text" type="s">
+      <choices>
+        <choice value="none"/>
+        <choice value="cpu"/>
+        <choice value="memory"/>
+        <choice value="both"/>
+      </choices>
+      <default>'cpu'</default>
+      <summary>What to show next to the panel icon</summary>
+    </key>
+    <key name="panel-graph" type="b">
+      <default>true</default>
+      <summary>Show a small live graph next to the panel icon</summary>
+    </key>
+    <key name="collapsed-sections" type="as">
+      <default>[]</default>
+      <summary>Sections of the details view that are collapsed</summary>
+    </key>
+    <key name="sort-key" type="s">
+      <choices>
+        <choice value="cpu"/>
+        <choice value="memory"/>
+        <choice value="name"/>
+      </choices>
+      <default>'cpu'</default>
+      <summary>How the app list is sorted</summary>
+    </key>
+    <key name="show-system-processes" type="b">
+      <default>false</default>
+      <summary>Also list processes owned by other users (root, system services)</summary>
+    </key>
+    <key name="confirm-kill" type="b">
+      <default>true</default>
+      <summary>Require a second click before ending an app or process</summary>
+    </key>
+    <key name="kill-timeout" type="i">
+      <range min="1" max="30"/>
+      <default>3</default>
+      <summary>Seconds to wait for a clean exit before force killing</summary>
+    </key>
+    <key name="panel-position" type="s">
+      <choices>
+        <choice value="left"/>
+        <choice value="center"/>
+        <choice value="right"/>
+      </choices>
+      <default>'right'</default>
+      <summary>Which part of the top bar the button sits in</summary>
+    </key>
+    <key name="panel-index" type="i">
+      <range min="0" max="20"/>
+      <default>0</default>
+      <summary>Position of the button within its part of the top bar, counted from the left</summary>
+    </key>
+    <key name="panel-show-icon" type="b">
+      <default>true</default>
+      <summary>Show the icon in the top bar (always shown when there is no text)</summary>
+    </key>
+    <key name="panel-fixed-width" type="b">
+      <default>true</default>
+      <summary>Keep the top bar text from changing width as the values change</summary>
+    </key>
+    <key name="panel-graph-width" type="i">
+      <range min="16" max="80"/>
+      <default>26</default>
+      <summary>Width of the top bar graph in pixels</summary>
+    </key>
+    <key name="panel-graph-accent" type="b">
+      <default>true</default>
+      <summary>Draw the top bar graph in the system accent color</summary>
+    </key>
+    <key name="panel-graph-color" type="s">
+      <default>'#3584e4'</default>
+      <summary>Top bar graph color when the accent color isn't used</summary>
+    </key>
+    <key name="cpu-alert" type="i">
+      <range min="0" max="100"/>
+      <default>90</default>
+      <summary>Tint the top bar when total CPU use reaches this percentage (0 turns it off)</summary>
+    </key>
+    <key name="memory-alert" type="i">
+      <range min="0" max="100"/>
+      <default>90</default>
+      <summary>Tint the top bar when memory use reaches this percentage of RAM (0 turns it off)</summary>
+    </key>
+    <key name="menu-width" type="i">
+      <range min="440" max="800"/>
+      <default>500</default>
+      <summary>Width of the menu in pixels</summary>
+    </key>
+    <key name="show-summary" type="b">
+      <default>true</default>
+      <summary>Show the CPU, memory and load cards at the top of the list</summary>
+    </key>
+    <key name="list-category" type="s">
+      <choices>
+        <choice value="all"/>
+        <choice value="apps"/>
+        <choice value="services"/>
+        <choice value="commands"/>
+      </choices>
+      <default>'all'</default>
+      <summary>Which filter the list shows</summary>
+    </key>
+    <key name="hot-cpu" type="i">
+      <range min="1" max="100"/>
+      <default>25</default>
+      <summary>Highlight an app's CPU value from this share of all CPUs</summary>
+    </key>
+    <key name="hot-memory" type="i">
+      <range min="1" max="100"/>
+      <default>15</default>
+      <summary>Highlight an app's memory value from this share of RAM</summary>
+    </key>
+    <key name="hidden-apps" type="as">
+      <default>[]</default>
+      <summary>Apps left out of the list, by name as shown or by unit name</summary>
+    </key>
+    <key name="cpu-per-core" type="b">
+      <default>false</default>
+      <summary>Show app and process CPU per core, so one busy core reads 100%</summary>
+    </key>
+    <key name="binary-units" type="b">
+      <default>false</default>
+      <summary>Show sizes in powers of 1024 (KiB, MiB, GiB)</summary>
+    </key>
+    <key name="network-bits" type="b">
+      <default>false</default>
+      <summary>Show network speeds in bits per second</summary>
+    </key>
+    <key name="toggle-menu" type="as">
+      <default>[]</default>
+      <summary>Keyboard shortcut that opens and closes the menu</summary>
+    </key>
+    <key name="system-monitor-command" type="s">
+      <default>''</default>
+      <summary>Command run by the system monitor button (empty uses GNOME System Monitor or Resources)</summary>
+    </key>
+  </schema>
+</schemalist>
